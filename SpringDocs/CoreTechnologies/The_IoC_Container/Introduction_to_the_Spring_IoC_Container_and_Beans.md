@@ -118,3 +118,7 @@ Spring에서 애플리케이션의 핵심을 이루며 Spring IoC 컨테이너�
 
 ** Otherwise, a bean is simply one of many objects in your application.
 다르게 말해, 빈은 단순히 애플리케이션의 많은 객체 중 하나일 뿐입니다.
+
+
+**Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.**
+Beans과 그들 간의 의존 관계는 컨테이너에서 사용되는 설정 메타 데이터에 반영됩니다.
