@@ -48,3 +48,46 @@ AnnotationConfigApplicationContext와 ClassPathXmlApplicationContext는 Spring I
 
 자동 컨테이너 관리 방식을 강조하려고 하는 표현이다. -> 개발자가 명시적으로 코드에 IoC 컨테이너를 생성하지 않아도 되는 이유를 말하고 있습니다.
 
+
+**For example, in a plain web application scenario, a simple boilerplate web descriptor XML in the web.xml file of the 
+application suffices (see Convenient ApplicationContext Instantiation for Web Applications).**
+예를 들어, 일반적인 웹 어플리케이션 시나리오에서는 애플리케이션의 web.xml파일에 간단한 기본적인 설정용 XML(web descriptor)을 작성하는 것으로 충분합니다.  
+
+- plain web application scenario : 복잡한 설정이나 구성이 없는 웹 애플리케이션
+- a simple boilerplate web descriptor XML : boilerplate는 최소한의 필수 코드 또는 설정을 의미합니다.  
+- suffices : 충분하다.
+
+
+**In a Spring Boot scenario, the application context is implicitly bootstrapped for you based on common setup 
+conventions.**
+Spring Boot 환경에서는 일반적인 설정 관례를 기반으로 애플리케이션 켄텍스트가 암묵적으로 부트스트랩(초기화) 됩니다.
+
+- implicitly bootstrapped : Spring Boot가 기본 설정을 기반으로 자동으로 애플리케이션 컨텍스트를 초기호 해줍니다.  
+- common setup conventions : 일반적으로 많이 사용하는 관례  
+
+SpringBoot의 자동 설정(Auto-Configuration) 철학을 강조한 내용입니다. 
+
+
+**The following diagram shows a high-level view of how Spring works.**  
+다이어그램은 스프링이 작동하는 방식을 큰 그림으로 보여줍니다.
+
+
+Your application classes are combined with configuration metadata so that, after the ApplicationContext is created 
+and initialized, you have a fully configured and executable system or application.  
+어플리케이션 클래스는 설정 메타데이터와 결합되어, ApplicationContext가 생성되고 초기화된 후에 완전히 구성되고 실행 가능한 시스템 또는 어플리케이션이 됩니다.  
+
+
+![img.png](img.png)
+Figure1. The Spring Ioc Container
+
+
+### Configuration Metadata
+**As the preceding, diagram shows, the Spring IoC container consumes a form of configuration metadata.
+앞선 다이아 그림에서 보이듯이, Spring IoC Container는 설정 메타데이터의 한 형태를 사용합니다.**  
+
+- As the preceding : 앞선, 이전의
+
+
+**This configuration metadata represents how you, as an application developer, tell the Spring container to 
+instantiate, configure and assemble the components in your application.**  
+설정 메타데이터는 애플리케이션 개발자가 애플리케이션 내의 컴포넌트를 생성, 구성, 조립하는 방법을 스프링 컨테이너에게 전달하는 방식을 나타냅니다.
