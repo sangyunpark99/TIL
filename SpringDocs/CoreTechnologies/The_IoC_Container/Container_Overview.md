@@ -91,3 +91,77 @@ Figure1. The Spring Ioc Container
 **This configuration metadata represents how you, as an application developer, tell the Spring container to 
 instantiate, configure and assemble the components in your application.**  
 설정 메타데이터는 애플리케이션 개발자가 애플리케이션 내의 컴포넌트를 생성, 구성, 조립하는 방법을 스프링 컨테이너에게 전달하는 방식을 나타냅니다.
+
+
+**The Spring IoC container itself is totally decoupled from the format in which this configuration metadata is 
+actually written.**
+Spring IoC 컨테이너 자체는 구성 메타데이터가 실제로 작성된 형식으로부터 완전히 분리되어 있습니다.  
+
+- 의미 : Spring IoC 컨테이너는 구성 정보를 어떤 형식으로 작성했는지에 의존하지 않는다는 뜻입니다.  
+- 형시에는 XML파일, Java기반 구성 파일, 프로퍼티 파일 또는 YAML 파일, 어노테이션 등이 있습니다.  
+
+
+**These days, many developers choose Java-based configuration for their Spring applications:**
+오늘날, 많은 개발자들이 스프링 애플리케이션을 자바 기반 구성으로 설정하는 것을 선택합니다.
+
+
+**Annotation-based configuration : define beans using annotation-based-configuration metadata on your application's 
+component classes.**
+어노테이션을 기반 구성 : 어플리케이션의 컴포넌트 클래스에 어노테이션 기반의 메타데이터를 사용하여 빈들을 정의합니다.
+
+
+**Java-based configuration: define beans external to your application classes by using Java-based configuration 
+classes.**
+Java기반 구성 : 자바 기반의 구성 클래스를 사용하여 애플리케이션 클래스 외부에 빈을 정의합니다.
+
+
+**To use theses features, see the @Configuration, @Bean, @Import, and @DependsOn annotations.**
+이 기능들을 사용하기 위해서, @Configuration, @Bean, @Import, and @DependsOn 어노테이션을 참조하세요
+
+
+자바 기반 구성 클래스란?  
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public UserService userService() {
+        return new UserService(userRepository());
+    }
+
+    @Bean
+    public UserRepository userRepository() {
+        return new UserRepository();
+    }
+}
+```
+자바 기반 구성이 어노테이션 기반 구성보다 더 큰 개념이라고 불 수 있습니다.  
+
+
+**Spring configuration consists of at least one and typically more than one bean definition that the container 
+must manage.**  
+스프링 구성은 컨테이너가 관리해야 하는 최소 하나 이상의 빈 정의로 구성됩니다.  
+
+
+**Java configuration typically uses @Bean annotated methods within a @Configuration class, each corresponding to one 
+bean define.** 
+Java 구성에서는 일반적으로 @Configuration 클래스 안에서 각 빈 정의에 해당하는 @Bean으로 어노테이션된 메서드를 사용합니다.  
+
+- each corresponding to one bean define : 각 빈에 정의에 해당하는 
+- correspond : 해당하다.
+
+
+**These bean definitions correspond to the actual objects that make up your application.**
+이 빈의 정의들은 어플리케이션을 구성하는 실제 객체에 해당됩니다.  
+
+
+**Typically, you define sevice layer objects, persistence layer objects such as repositories or data access objects,
+(DAOs), presentation objects such as Web controllers, infrastructure objects such as a JPA EntityMangerFactory, JMS 
+queues, and so forth.**
+전형적으로, 서비스 계층 객체, 레포지토리나 데이터 접근 객체와 같은 영속성 계층의 객체, Web 컨트롤러와 같은 표현 계층 객체, JPA 엔티티 매니저팩터리.JMS queue등과 같은 인프라스트럭쳐 
+객체를 정의합니다.
+
+- 인프라스트럭처 객체 : 애플리케이션의 주요 비즈니스 로직을 지원하는 데 필요한 시스템 수준의 구성 요소를 의미합니다.
+ex) 데이터베이스, 메시징 시스템, 파일 시스템, 기타 외부 시스템과 통신하거나 상호작용할 수 있도록 지원하는 역하을 하는 시스템을 의미합니다.  
+
+
