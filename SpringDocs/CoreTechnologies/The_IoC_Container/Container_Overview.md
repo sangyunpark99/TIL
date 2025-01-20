@@ -165,3 +165,7 @@ queues, and so forth.**
 ex) 데이터베이스, 메시징 시스템, 파일 시스템, 기타 외부 시스템과 통신하거나 상호작용할 수 있도록 지원하는 역하을 하는 시스템을 의미합니다.  
 
 
+**Typically, one dose not configure find-grained domain objects in the container, because it is usually the 
+responsibility of repositories and business logic to create and load domain objects.**
+일반적으로, 컨테이너에 세밀한 도메인을 구성하지 않습니다. 왜냐하면 도메인 객체를 생성하고 로드하는 것은 레포지토리와 비즈니스 로직의 책임이기 때문입니다.
+
