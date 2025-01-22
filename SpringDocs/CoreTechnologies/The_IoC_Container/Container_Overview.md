@@ -169,3 +169,6 @@ ex) 데이터베이스, 메시징 시스템, 파일 시스템, 기타 외부 시
 responsibility of repositories and business logic to create and load domain objects.**
 일반적으로, 컨테이너에 세밀한 도메인을 구성하지 않습니다. 왜냐하면 도메인 객체를 생성하고 로드하는 것은 레포지토리와 비즈니스 로직의 책임이기 때문입니다.
 
+
+- fine-grained domain objects : 세밀한 도메인 객체
+
